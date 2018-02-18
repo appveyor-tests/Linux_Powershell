@@ -1,5 +1,9 @@
 build_cloud: LinuxGCE
 image: Linux GCE
+  
+init:
+- appveyor version
+
 clone_script:
 - pwsh: |
     Write-host "PowerShell Core version $($PSVersionTable.PSVersion)"
