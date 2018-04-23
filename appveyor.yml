@@ -1,5 +1,7 @@
 init:
 - appveyor version
+- sh: env
+- sh: echo $PATH | tr ':' '\n'
 
 clone_script:
 - pwsh: |
