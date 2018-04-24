@@ -6,7 +6,6 @@ init:
 - appveyor version
 - sh: env
 - sh: echo $PATH | tr ':' '\n'
-- sh: ip a
 
 clone_script:
 - pwsh: |
