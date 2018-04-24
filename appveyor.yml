@@ -7,12 +7,6 @@ init:
 - sh: env
 - sh: echo $PATH | tr ':' '\n'
 - sh: ip a
-- sh: |
-    set -x
-    INT_IP=$(ip -o -4 addr show up primary scope global | ( read -r num dev fam addr rest; echo ${addr%/*}; ))
-    IFS='.' read -r -a INT_IP_ARR <<< "$INT_IP"
-    PORT=$(( 22000 + (${INT_IP_ARR[2]} - 0) * 256 + ${INT_IP_ARR[3]} ))
-
 
 clone_script:
 - pwsh: |
