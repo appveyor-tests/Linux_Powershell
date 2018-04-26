@@ -4,7 +4,8 @@ init:
 - sh: echo $PATH | tr ':' '\n'
 - sh: cat /etc/network/interfaces
 - sh: ls -ltr /etc/network/interfaces.d/
-- sh: cat /etc/network/interfaces.d/*
+- sh: ip -o -4 addr show up primary scope global | ( read -r num dev fam addr rest; echo ${addr%/*}; )
+
 
 clone_script:
 - pwsh: |
