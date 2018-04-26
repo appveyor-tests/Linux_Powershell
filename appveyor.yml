@@ -2,6 +2,9 @@ init:
 - appveyor version
 - sh: env
 - sh: echo $PATH | tr ':' '\n'
+- sh: cat /etc/network/interfaces
+- sh: ls -ltr /etc/network/interfaces.d/
+- sh: cat /etc/network/interfaces.d/*
 
 clone_script:
 - pwsh: |
