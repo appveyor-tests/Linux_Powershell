@@ -14,6 +14,7 @@ clone_script:
     if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
 - sh: pwsh -command '"Hello World"'
 - pwsh -command '"Hello World"'
+- pwsh: "Hello World"
 - pwsh: pwsh -command '"Hello World"'
 
 build: off
