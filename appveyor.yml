@@ -15,7 +15,8 @@ clone_script:
     Write-host "PowerShell Core version $($PSVersionTable.PSVersion)"
     if ($PSVersionTable.PSVersion.Major -le 5) {throw "PowerShell version is less or equel than 5. Should be at least 6 when called from -pwsh prefix"}
 - pwsh -command '"Hello World"'
-- pwsh: "Hello World"
+- sh: pwsh -command '"Hello World"'
+
 
 build: off
 test: off
