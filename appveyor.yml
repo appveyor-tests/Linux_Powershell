@@ -1,11 +1,12 @@
 init:
-- appveyor version
-- sh: echo $APPVEYOR_BUILD_WORKER_IMAGE
-- sh: echo $APPVEYOR_BUILD_WORKER_CLOUD
-- sh: env
-- sh: echo $PATH | tr ':' '\n'
-- sh: ip -o -4 addr show up primary scope global | ( read -r num dev fam addr rest; echo ${addr%/*}; )
-- sh: cat /etc/hosts
+ - appveyor version
+ - ps: Update-AppveyorBuild -Message "Image '$env:APPVEYOR_BUILD_WORKER_IMAGE'@'$env:APPVEYOR_BUILD_WORKER_CLOUD' cloud. $env:APPVEYOR_REPO_COMMIT_MESSAGE"
+ - sh: echo $APPVEYOR_BUILD_WORKER_IMAGE
+ - sh: echo $APPVEYOR_BUILD_WORKER_CLOUD
+ - sh: env
+ - sh: echo $PATH | tr ':' '\n'
+ - sh: ip -o -4 addr show up primary scope global | ( read -r num dev fam addr rest; echo ${addr%/*}; )
+ - sh: cat /etc/hosts
 
 
 clone_script:
